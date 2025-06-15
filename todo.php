@@ -126,5 +126,6 @@ print implode(PHP_EOL, $lines);
   		2. force tabs as indicator -> look at //Add Tabs to output
     		3. force pretty output -> look at //Add Tabs to output
       		4. Remove and validate ANY src or href (not only img also iframe can have it and probably more)
-		5. Add optional src -> src="data:image:"
+		5. Add extra src -> src="data:image:"
+  		6. Add extra onerror=javascript: OR onerror="javascript: cases
 */
