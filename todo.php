@@ -121,6 +121,10 @@ foreach(explode(PHP_EOL, $html) as $lineNo => $lineString)
 print implode(PHP_EOL, $lines);
 
 /*
+$dom = new \DOMDocument;
+$dom->loadHTML($html);
+echo $dom->validate() ? 'Valid' : 'Invalid';
+
 	Also Add:
 		1. search for attribute starting with \x to catch all \x20 stuff inserted between attributes to simulate space (maybe this stuff is picked as attr)
   		2. force tabs as indicator -> look at //Add Tabs to output
