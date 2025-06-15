@@ -122,5 +122,9 @@ print implode(PHP_EOL, $lines);
 
 /*
 	Also Add:
-		search for attribute starting with \x to catch all \x20 stuff inserted between attributes to simulate space
+		1. search for attribute starting with \x to catch all \x20 stuff inserted between attributes to simulate space (maybe this stuff is picked as attr)
+  		2. force tabs as indicator -> look at //Add Tabs to output
+    		3. force pretty output -> look at //Add Tabs to output
+      		4. Remove and validate ANY src or href (not only img also iframe can have it and probably more)
+		5. Add optional src -> src="data:image:"
 */
