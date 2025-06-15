@@ -128,4 +128,7 @@ print implode(PHP_EOL, $lines);
       		4. Remove and validate ANY src or href (not only img also iframe can have it and probably more)
 		5. Add extra src -> src="data:image:"
   		6. Add extra onerror=javascript: OR onerror="javascript: cases
+
+    Notes:
+	- Xpath cheatsheet -> https://serpapi.com/blog/xpath-selector-cheat-sheet-practical-examples-included/
 */
