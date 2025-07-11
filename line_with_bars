@@ -1,0 +1,37 @@
+google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    // Data structure with separate columns for each country and year
+    var data = google.visualization.arrayToDataTable([
+      ['Month', 'Current Year Ireland', 'Current Year Poland','Current Year Latvia' , 'Previous Year Ireland', 'Previous Year Poland', 'Previous Year Latvia'],
+      ['Jan', 100, 200, 300, 80, 180, 480],
+      ['Feb', 150, 250, 350, 120, 220, 420],
+      ['March', 200, 400, 600, 1180, 5180, 2180],
+      ['April', 120, 520, 420, 100, 300, 500]
+    ]);
+
+    var options = {
+      title: 'Current Year Stacked Bars (Left Axis) vs. Previous Year Lines (Right Axis)',
+      isStacked: true, // Stack the current year bars
+      vAxes: {
+        0: { title: 'Current Year Value' }, // Left axis (index 0)
+        1: { title: 'Previous Year Value' }  // Right axis (index 1)
+      },
+      hAxis: {title: 'Month'},
+      seriesType: 'bars', // Default series type is bars
+      series: {
+        0: { color: '#4285F4', targetAxisIndex: 0 }, // Current Year Ireland (Bar, Left Axis)
+        1: { color: '#F4B400', targetAxisIndex: 0 }, // Current Year Poland (Bar, Left Axis)
+        2: { color: '#0F9D58', targetAxisIndex: 0 }, // Current Year Latvia (Bar, Left Axis)
+        3: { color: '#DB4437', type: 'line', targetAxisIndex: 1 }, // Previous Year Ireland (Line, Right Axis)
+        4: { color: '#AA66CC', type: 'line', targetAxisIndex: 1 }, // Previous Year Poland (Line, Right Axis)
+        5: { color: '#3366CC', type: 'line', targetAxisIndex: 1 }  // Previous Year Latvia (Line, Right Axis)
+      }
+    };
+
+    // Use the ComboChart to combine bars and lines with dual axes
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+  }
